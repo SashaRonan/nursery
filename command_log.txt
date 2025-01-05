@@ -1,0 +1,44 @@
+
+## 1. Используя команду cat в терминале операционной системы Linux, создать
+## два файла Домашние животные (заполнив файл собаками, кошками,
+## хомяками) и Вьючные животными заполнив файл Лошадьми, верблюдами и ## ослы),
+## а затем объединить их. Просмотреть содержимое созданного файла.
+## Переименовать файл, дав ему новое имя (Друзья человека).
+
+  492  cat > Домашние_животные.txt
+  504  cat > Вьючные_животные.txt
+  520  cat Домашние_животные.txt Вьючные_животные.txt > Все_животные.txt
+  526  mv Все_животные.txt Друзья_человека.txt
+
+
+## 2. Создать директорию, переместить файл туда.
+
+  532  mkdir animals
+  534  mv Друзья_человека.txt animals/
+  535  mv Домашние_животные.txt animals/
+  536  mv Вьючные_животные.txt animals/
+
+
+## 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого репозитория.
+
+  544  wget https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+  545  sudo apt-key add RPM-GPG-KEY-mysql-2022
+  546  wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+  547  sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+  548  sudo apt update
+  549  sudo apt-get install mysql-server
+  550  sudo apt-get install mysql-client
+
+
+## 4. Установить и удалить deb-пакет с помощью dpkg.
+
+  551  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  552  sudo dpkg -i google-chrome-stable_current_amd64.deb
+  553  dpkg -l | grep google-chrome
+  554  sudo dpkg -P google-chrome-stable
+  555  dpkg -l | grep google-chrome
+
+
+## 5. Выложить историю команд в терминале ubuntu
+
+  556  history > command_log.txt
